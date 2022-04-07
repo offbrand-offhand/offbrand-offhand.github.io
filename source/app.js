@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { NetplayPlayer, DefaultInput, Game, RollbackWrapper } from "netplayjs";
+import { GameClass, NetplayPlayer, DefaultInput, Game, RollbackWrapper } from "netplayjs";
 
 const canvasSize = { width: 800, height: 600 };
 
@@ -12,7 +12,9 @@ class App extends Game {
         p.height = 40;
 
         renderer.stage.addChild(p);
-        this.canvas = renderer.view;
+        this.renderer = renderer;
+
+        document.appendChild(this.renderer.view)
     }
 
     tick(playerInputs) {
@@ -31,7 +33,7 @@ class App extends Game {
     }
 }
 
-App.canvasSize = canvasSize;
+App.canvasSize = { width: 0, height: 0 };
 App.timestep = 1000/60;
 
-new RollbackWrapper(App).start();
+new PixiRollbackWrapper(App).start();
