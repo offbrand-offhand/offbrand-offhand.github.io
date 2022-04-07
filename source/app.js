@@ -36,4 +36,4 @@ class App extends Game {
 App.canvasSize = { width: 0, height: 0 };
 App.timestep = 1000/60;
 
-new PixiRollbackWrapper(App).start();
+new RollbackWrapper(App).start();
