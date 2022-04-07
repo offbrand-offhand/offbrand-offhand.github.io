@@ -1,0 +1,9 @@
+body {
+    max-width: 90%;
+    width: 800px;
+}
+
+canvas {
+    width: 800px;
+    height: 600px;
+}
