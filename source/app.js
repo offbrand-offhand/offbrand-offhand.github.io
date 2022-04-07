@@ -7,7 +7,7 @@ class App extends Game {
     constructor() {
         super();
         let renderer = new PIXI.Application({ width: 640, height: 360 });
-        let p = PIXI.Sprite.from('resources/sprites/mch.jpg');
+        let p = PIXI.Sprite.from('/public/resources/sprites/mch.jpg');
         p.width = 40;
         p.height = 40;
 
