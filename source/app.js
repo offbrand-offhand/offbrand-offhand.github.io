@@ -6,14 +6,13 @@ const canvasSize = { width: 800, height: 600 };
 class App extends Game {
     constructor() {
         super();
-        this.render = new PIXI.Application();
-        this.players = [];
-
+        let renderer = new PIXI.Application();
         let p = PIXI.Sprite.from('resources/sprites/mch.jpg');
         p.width = 40;
         p.height = 40;
-        this.players.push(p);
-        this.canvas = this.render.view;
+
+        renderer.stage.addChild(p);
+        this.canvas = renderer.view;
     }
 
     tick(playerInputs) {
